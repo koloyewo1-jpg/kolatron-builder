@@ -372,4 +372,24 @@ pre {
   .content {
     padding: 18px;
   }
+
+.learning-path {
+  padding: 40px;
+  background: #f8fafc;
+  border-radius: 16px;
+  margin: 20px;
+}
+
+.path-steps {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.path-steps div {
+  background: white;
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
 }
