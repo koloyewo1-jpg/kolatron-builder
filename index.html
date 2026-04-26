@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kolatron Builder</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main class="app">
+  <section class="hero">
+    <span class="badge">Kolatron Builder</span>
+    <h1>Build practical engineering projects from problem to working solution.</h1>
+    <p>An app for beginners, apprentices, technicians, and engineers to learn by solving real machine problems using Arduino, PLCs, sensors, pneumatics, and AI.</p>
+
+    <div class="hero-actions">
+      <button class="primary" onclick="openBuilder()">Start First Project</button>
+      <button class="secondary" onclick="scrollToProjects()">Browse Projects</button>
+    </div>
+
+    <div class="stats">
+      <div class="stat">4 starter projects</div>
+      <div class="stat">Resources included</div>
+      <div class="stat">Built-in simulator</div>
+    </div>
+  </section>
+
+  <section class="layout" id="projectsSection">
+    <aside class="panel">
+      <input id="search" class="search" type="search" placeholder="Search Arduino, PLC, sensor, AI..." />
+      <div class="filters" id="filters"></div>
+      <div id="projectList"></div>
+    </aside>
+
+    <section class="details">
+      <div class="details-header">
+        <span class="category" id="categoryLabel"></span>
+        <h2 id="projectTitle"></h2>
+        <p id="projectOutcome"></p>
+
+        <div class="hero-actions">
+          <button class="primary" onclick="openBuilder()">Start Project</button>
+        </div>
+      </div>
+
+      <div class="tabs" id="tabs"></div>
+
+      <div class="content">
+        <h3 id="sectionTitle"></h3>
+        <div id="sectionItems"></div>
+      </div>
+    </section>
+  </section>
+</main>
+
+<section class="modal" id="builderModal">
+  <div class="modal-card">
+    <div class="modal-header">
+      <div>
+        <span class="badge">Project Mode</span>
+        <h2 id="modalTitle"></h2>
+        <p id="modalSubtitle"></p>
+      </div>
+      <button class="close" onclick="closeBuilder()">×</button>
+    </div>
+
+    <div class="workflow">
+      <div>
+        <h3>Progress checklist</h3>
+        <div class="checklist" id="progressChecklist"></div>
+      </div>
+
+      <div class="sim-box">
+        <h3>Mini simulator</h3>
+        <p id="simInstruction"></p>
+        <div class="counter" id="simCounter">0</div>
+
+        <button class="small-btn" onclick="simulateGoodSignal()">Simulate Good Signal</button>
+        <button class="small-btn" onclick="simulateFault()">Inject Fault</button>
+        <button class="small-btn" onclick="simulateNoSignal()">No Signal</button>
+        <button class="small-btn" onclick="resetSim()">Reset</button>
+
+        <div class="alert" id="faultAlert"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
